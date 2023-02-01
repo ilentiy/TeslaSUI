@@ -1,9 +1,5 @@
-//
-//  TeslaApp.swift
-//  Tesla
-//
-//  Created by Илья on 31.01.2023.
-//
+// TeslaApp.swift
+// Copyright © RoadMap. All rights reserved.
 
 import SwiftUI
 
@@ -11,7 +7,10 @@ import SwiftUI
 struct TeslaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                UnlockView()
+            }
+            .environment(\.colorScheme, .dark)
         }
     }
 }

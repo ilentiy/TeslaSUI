@@ -7,22 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0967397629887D5A00F15F20 /* TeslaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967397529887D5A00F15F20 /* TeslaApp.swift */; };
-		0967397829887D5A00F15F20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967397729887D5A00F15F20 /* ContentView.swift */; };
-		0967397A29887D5C00F15F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0967397929887D5C00F15F20 /* Assets.xcassets */; };
-		0967397D29887D5C00F15F20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0967397C29887D5C00F15F20 /* Preview Assets.xcassets */; };
+		096739482988620500F15F20 /* TeslaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096739472988620500F15F20 /* TeslaApp.swift */; };
+		0967394A2988620500F15F20 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096739492988620500F15F20 /* MenuView.swift */; };
+		0967394C2988620700F15F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0967394B2988620700F15F20 /* Assets.xcassets */; };
+		0967394F2988620700F15F20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0967394E2988620700F15F20 /* Preview Assets.xcassets */; };
+		0967395C29886B8200F15F20 /* Neumorphism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967395B29886B8200F15F20 /* Neumorphism.swift */; };
+		0967396029886E1B00F15F20 /* NeumorphismCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967395F29886E1B00F15F20 /* NeumorphismCircle.swift */; };
+		0967396329886F5400F15F20 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967396229886F5400F15F20 /* View+Extension.swift */; };
+		09673968298878E000F15F20 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09673967298878E000F15F20 /* BackgroundView.swift */; };
+		097EF28A298990FA00A3AB9E /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097EF289298990F900A3AB9E /* CircularProgressView.swift */; };
+		098DEF0E298980EA00B136DD /* NavigationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098DEF0D298980EA00B136DD /* NavigationButtonStyle.swift */; };
+		099981F5298A148C00C919ED /* PowerToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099981F4298A148C00C919ED /* PowerToggleStyle.swift */; };
+		09A9E8C5298977E2005AD13A /* ClimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9E8C4298977E2005AD13A /* ClimateView.swift */; };
+		09DB62662989390400B236C3 /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB62652989390400B236C3 /* UnlockView.swift */; };
+		09DB62692989461400B236C3 /* UnlockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB62682989461400B236C3 /* UnlockViewModel.swift */; };
+		09FD45662989A69D00B0E203 /* ClimateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD45652989A69D00B0E203 /* ClimateViewModel.swift */; };
+		09FD45682989B16800B0E203 /* ClimateBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD45672989B16700B0E203 /* ClimateBottomSheetView.swift */; };
+		09FD456A2989CDB700B0E203 /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD45692989CDB700B0E203 /* CustomStepper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0967397229887D5A00F15F20 /* Tesla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tesla.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0967397529887D5A00F15F20 /* TeslaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaApp.swift; sourceTree = "<group>"; };
-		0967397729887D5A00F15F20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0967397929887D5C00F15F20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0967397C29887D5C00F15F20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		096739442988620500F15F20 /* Tesla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tesla.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		096739472988620500F15F20 /* TeslaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaApp.swift; sourceTree = "<group>"; };
+		096739492988620500F15F20 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		0967394B2988620700F15F20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0967394E2988620700F15F20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0967395B29886B8200F15F20 /* Neumorphism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neumorphism.swift; sourceTree = "<group>"; };
+		0967395F29886E1B00F15F20 /* NeumorphismCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismCircle.swift; sourceTree = "<group>"; };
+		0967396229886F5400F15F20 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		09673967298878E000F15F20 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		097EF289298990F900A3AB9E /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		098DEF0D298980EA00B136DD /* NavigationButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonStyle.swift; sourceTree = "<group>"; };
+		099981F4298A148C00C919ED /* PowerToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerToggleStyle.swift; sourceTree = "<group>"; };
+		09A9E8C4298977E2005AD13A /* ClimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateView.swift; sourceTree = "<group>"; };
+		09DB62652989390400B236C3 /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
+		09DB62682989461400B236C3 /* UnlockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewModel.swift; sourceTree = "<group>"; };
+		09FD45652989A69D00B0E203 /* ClimateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateViewModel.swift; sourceTree = "<group>"; };
+		09FD45672989B16700B0E203 /* ClimateBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateBottomSheetView.swift; sourceTree = "<group>"; };
+		09FD45692989CDB700B0E203 /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0967396F29887D5A00F15F20 /* Frameworks */ = {
+		096739412988620500F15F20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,51 +58,122 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0967396929887D5A00F15F20 = {
+		0967393B2988620500F15F20 = {
 			isa = PBXGroup;
 			children = (
-				0967397429887D5A00F15F20 /* Tesla */,
-				0967397329887D5A00F15F20 /* Products */,
+				096739462988620500F15F20 /* Tesla */,
+				096739452988620500F15F20 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0967397329887D5A00F15F20 /* Products */ = {
+		096739452988620500F15F20 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0967397229887D5A00F15F20 /* Tesla.app */,
+				096739442988620500F15F20 /* Tesla.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0967397429887D5A00F15F20 /* Tesla */ = {
+		096739462988620500F15F20 /* Tesla */ = {
 			isa = PBXGroup;
 			children = (
-				0967397529887D5A00F15F20 /* TeslaApp.swift */,
-				0967397729887D5A00F15F20 /* ContentView.swift */,
-				0967397929887D5C00F15F20 /* Assets.xcassets */,
-				0967397B29887D5C00F15F20 /* Preview Content */,
+				096739472988620500F15F20 /* TeslaApp.swift */,
+				0967395929886B4D00F15F20 /* Helper */,
+				09DB6267298945F700B236C3 /* ViewModel */,
+				0967395829886B3700F15F20 /* View */,
+				0967394B2988620700F15F20 /* Assets.xcassets */,
+				0967394D2988620700F15F20 /* Preview Content */,
 			);
 			path = Tesla;
 			sourceTree = "<group>";
 		};
-		0967397B29887D5C00F15F20 /* Preview Content */ = {
+		0967394D2988620700F15F20 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				0967397C29887D5C00F15F20 /* Preview Assets.xcassets */,
+				0967394E2988620700F15F20 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0967395829886B3700F15F20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				096739492988620500F15F20 /* MenuView.swift */,
+				09DB62652989390400B236C3 /* UnlockView.swift */,
+				09A9E8C4298977E2005AD13A /* ClimateView.swift */,
+				09FD45672989B16700B0E203 /* ClimateBottomSheetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0967395929886B4D00F15F20 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				098DEF0C2989808A00B136DD /* Style */,
+				096739642988757D00F15F20 /* View */,
+				0967396129886F4000F15F20 /* Extension */,
+				0967395A29886B5A00F15F20 /* ViewModifier */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		0967395A29886B5A00F15F20 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				0967395B29886B8200F15F20 /* Neumorphism.swift */,
+				0967395F29886E1B00F15F20 /* NeumorphismCircle.swift */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		0967396129886F4000F15F20 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0967396229886F5400F15F20 /* View+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		096739642988757D00F15F20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09673967298878E000F15F20 /* BackgroundView.swift */,
+				097EF289298990F900A3AB9E /* CircularProgressView.swift */,
+				09FD45692989CDB700B0E203 /* CustomStepper.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		098DEF0C2989808A00B136DD /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				098DEF0D298980EA00B136DD /* NavigationButtonStyle.swift */,
+				099981F4298A148C00C919ED /* PowerToggleStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		09DB6267298945F700B236C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				09DB62682989461400B236C3 /* UnlockViewModel.swift */,
+				09FD45652989A69D00B0E203 /* ClimateViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0967397129887D5A00F15F20 /* Tesla */ = {
+		096739432988620500F15F20 /* Tesla */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0967398029887D5C00F15F20 /* Build configuration list for PBXNativeTarget "Tesla" */;
+			buildConfigurationList = 096739522988620700F15F20 /* Build configuration list for PBXNativeTarget "Tesla" */;
 			buildPhases = (
-				0967396E29887D5A00F15F20 /* Sources */,
-				0967396F29887D5A00F15F20 /* Frameworks */,
-				0967397029887D5A00F15F20 /* Resources */,
+				096739402988620500F15F20 /* Sources */,
+				096739412988620500F15F20 /* Frameworks */,
+				096739422988620500F15F20 /* Resources */,
+				096739562988633F00F15F20 /* swiftFormat */,
+				096739572988635B00F15F20 /* swiftlint */,
 			);
 			buildRules = (
 			);
@@ -84,25 +181,25 @@
 			);
 			name = Tesla;
 			productName = Tesla;
-			productReference = 0967397229887D5A00F15F20 /* Tesla.app */;
+			productReference = 096739442988620500F15F20 /* Tesla.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0967396A29887D5A00F15F20 /* Project object */ = {
+		0967393C2988620500F15F20 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					0967397129887D5A00F15F20 = {
+					096739432988620500F15F20 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 0967396D29887D5A00F15F20 /* Build configuration list for PBXProject "Tesla" */;
+			buildConfigurationList = 0967393F2988620500F15F20 /* Build configuration list for PBXProject "Tesla" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,42 +207,94 @@
 				en,
 				Base,
 			);
-			mainGroup = 0967396929887D5A00F15F20;
-			productRefGroup = 0967397329887D5A00F15F20 /* Products */;
+			mainGroup = 0967393B2988620500F15F20;
+			productRefGroup = 096739452988620500F15F20 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0967397129887D5A00F15F20 /* Tesla */,
+				096739432988620500F15F20 /* Tesla */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0967397029887D5A00F15F20 /* Resources */ = {
+		096739422988620500F15F20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0967397D29887D5C00F15F20 /* Preview Assets.xcassets in Resources */,
-				0967397A29887D5C00F15F20 /* Assets.xcassets in Resources */,
+				0967394F2988620700F15F20 /* Preview Assets.xcassets in Resources */,
+				0967394C2988620700F15F20 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		096739562988633F00F15F20 /* swiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		096739572988635B00F15F20 /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		0967396E29887D5A00F15F20 /* Sources */ = {
+		096739402988620500F15F20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0967397829887D5A00F15F20 /* ContentView.swift in Sources */,
-				0967397629887D5A00F15F20 /* TeslaApp.swift in Sources */,
+				09DB62692989461400B236C3 /* UnlockViewModel.swift in Sources */,
+				098DEF0E298980EA00B136DD /* NavigationButtonStyle.swift in Sources */,
+				09673968298878E000F15F20 /* BackgroundView.swift in Sources */,
+				0967396029886E1B00F15F20 /* NeumorphismCircle.swift in Sources */,
+				09FD45662989A69D00B0E203 /* ClimateViewModel.swift in Sources */,
+				09DB62662989390400B236C3 /* UnlockView.swift in Sources */,
+				09FD45682989B16800B0E203 /* ClimateBottomSheetView.swift in Sources */,
+				099981F5298A148C00C919ED /* PowerToggleStyle.swift in Sources */,
+				0967394A2988620500F15F20 /* MenuView.swift in Sources */,
+				0967396329886F5400F15F20 /* View+Extension.swift in Sources */,
+				0967395C29886B8200F15F20 /* Neumorphism.swift in Sources */,
+				09FD456A2989CDB700B0E203 /* CustomStepper.swift in Sources */,
+				096739482988620500F15F20 /* TeslaApp.swift in Sources */,
+				09A9E8C5298977E2005AD13A /* ClimateView.swift in Sources */,
+				097EF28A298990FA00A3AB9E /* CircularProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		0967397E29887D5C00F15F20 /* Debug */ = {
+		096739502988620700F15F20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -195,7 +344,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -205,7 +354,7 @@
 			};
 			name = Debug;
 		};
-		0967397F29887D5C00F15F20 /* Release */ = {
+		096739512988620700F15F20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -249,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -259,7 +408,7 @@
 			};
 			name = Release;
 		};
-		0967398129887D5C00F15F20 /* Debug */ = {
+		096739532988620700F15F20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -288,7 +437,7 @@
 			};
 			name = Debug;
 		};
-		0967398229887D5C00F15F20 /* Release */ = {
+		096739542988620700F15F20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -320,25 +469,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0967396D29887D5A00F15F20 /* Build configuration list for PBXProject "Tesla" */ = {
+		0967393F2988620500F15F20 /* Build configuration list for PBXProject "Tesla" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0967397E29887D5C00F15F20 /* Debug */,
-				0967397F29887D5C00F15F20 /* Release */,
+				096739502988620700F15F20 /* Debug */,
+				096739512988620700F15F20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0967398029887D5C00F15F20 /* Build configuration list for PBXNativeTarget "Tesla" */ = {
+		096739522988620700F15F20 /* Build configuration list for PBXNativeTarget "Tesla" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0967398129887D5C00F15F20 /* Debug */,
-				0967398229887D5C00F15F20 /* Release */,
+				096739532988620700F15F20 /* Debug */,
+				096739542988620700F15F20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0967396A29887D5A00F15F20 /* Project object */;
+	rootObject = 0967393C2988620500F15F20 /* Project object */;
 }

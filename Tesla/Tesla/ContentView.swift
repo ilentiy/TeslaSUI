@@ -1,26 +1,44 @@
-//
-//  ContentView.swift
-//  Tesla
-//
-//  Created by Илья on 31.01.2023.
-//
+// ContentView.swift
+// Copyright © RoadMap. All rights reserved.
 
 import SwiftUI
 
+///
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        BackgroundView {
+            VStack {
+                headerView
+                Spacer()
+            }
+            .padding()
         }
-        .padding()
+    }
+
+    private var headerView: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text("Tesla")
+                    .font(
+                        .system(size: 28, weight: .bold)
+                    )
+                    .foregroundColor(Color("label"))
+                Text("187 km")
+                    .font(
+                        .system(size: 17, weight: .semibold)
+                    )
+                    .foregroundColor(Color("label"))
+                    .opacity(0.4)
+            }
+            Spacer()
+        }
+        .padding(25)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.colorScheme, .dark)
     }
 }
