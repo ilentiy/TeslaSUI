@@ -14,6 +14,8 @@
 		0906C4F6298C982100FA7917 /* ChargeProgressShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906C4F5298C982100FA7917 /* ChargeProgressShape.swift */; };
 		0906C4F8298C99AF00FA7917 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906C4F7298C99AF00FA7917 /* Constants.swift */; };
 		0906C4FA298CA5E100FA7917 /* NeumorphismPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906C4F9298CA5E100FA7917 /* NeumorphismPressed.swift */; };
+		0906C4FC298CCEFF00FA7917 /* ClimateSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906C4FB298CCEFF00FA7917 /* ClimateSliderView.swift */; };
+		0906C4FE298CCF4000FA7917 /* TriangleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906C4FD298CCF4000FA7917 /* TriangleShape.swift */; };
 		0921D5EF298C456800EF4625 /* TeslaIconShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0921D5EE298C456800EF4625 /* TeslaIconShape.swift */; };
 		0921D5F1298C5FAE00EF4625 /* LaunchAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0921D5F0298C5FAE00EF4625 /* LaunchAppViewModel.swift */; };
 		096739482988620500F15F20 /* TeslaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096739472988620500F15F20 /* TeslaApp.swift */; };
@@ -38,7 +40,6 @@
 		09D2BAA4298C3FA000C3D78C /* LaunchAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2BAA3298C3F9F00C3D78C /* LaunchAppView.swift */; };
 		09DB62662989390400B236C3 /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB62652989390400B236C3 /* UnlockView.swift */; };
 		09DB62692989461400B236C3 /* UnlockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB62682989461400B236C3 /* UnlockViewModel.swift */; };
-		09FD45662989A69D00B0E203 /* ClimateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD45652989A69D00B0E203 /* ClimateViewModel.swift */; };
 		09FD45682989B16800B0E203 /* ClimateBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD45672989B16700B0E203 /* ClimateBottomSheetView.swift */; };
 		09FD456A2989CDB700B0E203 /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD45692989CDB700B0E203 /* CustomStepper.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,8 @@
 		0906C4F5298C982100FA7917 /* ChargeProgressShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeProgressShape.swift; sourceTree = "<group>"; };
 		0906C4F7298C99AF00FA7917 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0906C4F9298CA5E100FA7917 /* NeumorphismPressed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismPressed.swift; sourceTree = "<group>"; };
+		0906C4FB298CCEFF00FA7917 /* ClimateSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateSliderView.swift; sourceTree = "<group>"; };
+		0906C4FD298CCF4000FA7917 /* TriangleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleShape.swift; sourceTree = "<group>"; };
 		0921D5EE298C456800EF4625 /* TeslaIconShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaIconShape.swift; sourceTree = "<group>"; };
 		0921D5F0298C5FAE00EF4625 /* LaunchAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAppViewModel.swift; sourceTree = "<group>"; };
 		096739442988620500F15F20 /* Tesla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tesla.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +79,6 @@
 		09D2BAA3298C3F9F00C3D78C /* LaunchAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAppView.swift; sourceTree = "<group>"; };
 		09DB62652989390400B236C3 /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		09DB62682989461400B236C3 /* UnlockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewModel.swift; sourceTree = "<group>"; };
-		09FD45652989A69D00B0E203 /* ClimateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateViewModel.swift; sourceTree = "<group>"; };
 		09FD45672989B16700B0E203 /* ClimateBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateBottomSheetView.swift; sourceTree = "<group>"; };
 		09FD45692989CDB700B0E203 /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 				0921D5EE298C456800EF4625 /* TeslaIconShape.swift */,
 				099AD55D298ACB8F00B32042 /* CustomTabBarShape.swift */,
 				0906C4F5298C982100FA7917 /* ChargeProgressShape.swift */,
+				0906C4FD298CCF4000FA7917 /* TriangleShape.swift */,
 			);
 			path = Shape;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				0995ABC1298BD4A400C1C184 /* ChargeProgressViewStyle.swift */,
 				09FD45692989CDB700B0E203 /* CustomStepper.swift */,
 				0995ABC3298BE6B200C1C184 /* ChargeSliderView.swift */,
+				0906C4FB298CCEFF00FA7917 /* ClimateSliderView.swift */,
 				0995ABC5298BF9A800C1C184 /* CustomDisclosureGroupStyle.swift */,
 				0906C4F3298C8EE000FA7917 /* CustomTabView.swift */,
 			);
@@ -224,7 +228,6 @@
 			children = (
 				0921D5F0298C5FAE00EF4625 /* LaunchAppViewModel.swift */,
 				09DB62682989461400B236C3 /* UnlockViewModel.swift */,
-				09FD45652989A69D00B0E203 /* ClimateViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -351,15 +354,16 @@
 				0967396029886E1B00F15F20 /* NeumorphismCircle.swift in Sources */,
 				0906C4F6298C982100FA7917 /* ChargeProgressShape.swift in Sources */,
 				0906C4F8298C99AF00FA7917 /* Constants.swift in Sources */,
-				09FD45662989A69D00B0E203 /* ClimateViewModel.swift in Sources */,
 				09DB62662989390400B236C3 /* UnlockView.swift in Sources */,
 				09750676298AF682009E9381 /* CustomMainTabView.swift in Sources */,
 				0906C4F2298C8E9600FA7917 /* TabItemViewModifier.swift in Sources */,
 				09FD45682989B16800B0E203 /* ClimateBottomSheetView.swift in Sources */,
+				0906C4FC298CCEFF00FA7917 /* ClimateSliderView.swift in Sources */,
 				099981F5298A148C00C919ED /* PowerToggleStyle.swift in Sources */,
 				0967394A2988620500F15F20 /* MenuView.swift in Sources */,
 				0921D5F1298C5FAE00EF4625 /* LaunchAppViewModel.swift in Sources */,
 				0967396329886F5400F15F20 /* View+Extension.swift in Sources */,
+				0906C4FE298CCF4000FA7917 /* TriangleShape.swift in Sources */,
 				0906C4EC298C83C600FA7917 /* Color+Extension.swift in Sources */,
 				0995ABC4298BE6B200C1C184 /* ChargeSliderView.swift in Sources */,
 				0995ABC2298BD4A400C1C184 /* ChargeProgressViewStyle.swift in Sources */,

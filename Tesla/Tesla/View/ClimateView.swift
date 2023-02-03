@@ -43,10 +43,8 @@ struct ClimateView: View {
 
     @Environment(\.presentationMode) private var presentation
 
-    @StateObject private var climateViewModel = ClimateViewModel()
-
-    @State private var circleProgress: CGFloat = 0
-    @State private var progress: CGFloat = 0
+    @State private var circleProgress = 0.0
+    @State private var progress = 0.0
     @State private var isDesclosureGroupExpanded = true
     @State private var isAlertShown = false
     @State private var isOnClimate = false
@@ -142,7 +140,8 @@ struct ClimateView: View {
                     .foregroundColor(.gray)
             }
             .frame(width: 30, height: 30)
-            Slider(value: $circleProgress, in: 0 ... 15, step: 0.3)
+            ClimateSliderView(color: $selectedFirstColor, value: $circleProgress, sliderRange: 0 ... 15)
+                .frame(height: 7)
                 .tint(selectedFirstColor)
                 .padding(.vertical, 30)
                 .padding(.horizontal)
@@ -169,7 +168,8 @@ struct ClimateView: View {
             }
             .frame(width: 30, height: 30)
             withAnimation {
-                Slider(value: $progress, in: 0 ... 15, step: 0.3)
+                ClimateSliderView(color: $selectedFirstColor, value: $progress, sliderRange: 0 ... 15)
+                    .frame(height: 7)
             }
             .padding(.vertical, 30)
             .padding(.horizontal)
@@ -191,7 +191,8 @@ struct ClimateView: View {
             }
             .frame(width: 30, height: 30)
             withAnimation {
-                Slider(value: $progress, in: 0 ... 15, step: 0.3)
+                ClimateSliderView(color: $selectedFirstColor, value: $progress, sliderRange: 0 ... 15)
+                    .frame(height: 7)
             }
             .padding(.vertical, 30)
             .padding(.horizontal)
@@ -213,7 +214,8 @@ struct ClimateView: View {
             }
             .frame(width: 30, height: 30)
             withAnimation {
-                Slider(value: $progress, in: 0 ... 15, step: 0.3)
+                ClimateSliderView(color: $selectedFirstColor, value: $progress, sliderRange: 0 ... 15)
+                    .frame(height: 7)
             }
             .padding(.vertical, 30)
             .padding(.horizontal)

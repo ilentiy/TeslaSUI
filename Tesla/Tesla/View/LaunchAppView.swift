@@ -18,9 +18,9 @@ struct LaunchAppView: View {
             }
         }
         .onAppear {
-            withAnimation(.linear(duration: 10)) {
+            withAnimation(.linear(duration: 5)) {
                 launchAppViewModel.progress = 1
-                DispatchQueue.main.asyncAfter(deadline: .now() + 11) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
                     withAnimation(.easeIn(duration: 2)) {
                         self.launchAppViewModel.isActive = true
                     }

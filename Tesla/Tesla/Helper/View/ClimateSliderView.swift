@@ -1,11 +1,13 @@
-// ChargeSliderView.swift
+// ClimateSliderView.swift
 // Copyright © RoadMap. All rights reserved.
 
 import SwiftUI
 
-/// Кастомный слайдер на экране зарядки
-struct ChargeSliderView: View {
+/// Кастомный слайдер экрана климат
+struct ClimateSliderView: View {
     // MARK: - Public Properties
+
+    @Binding var color: Color
 
     @Binding var value: Double
 
@@ -15,9 +17,17 @@ struct ChargeSliderView: View {
 
     var body: some View {
         GeometryReader { proxy in
+            let thumbSize = proxy.size.height * 2
+            let maxValue = proxy.size.width - thumbSize
+            let scaleFactor = maxValue / (sliderRange.upperBound - sliderRange.lowerBound)
+            let lowerBound = sliderRange.lowerBound
             let height = proxy.size.height
+            let sliderValue = (self.value - lowerBound) * scaleFactor
+
             ZStack {
                 sliderLine(height: height)
+                sliderProgress(height: height, value: sliderValue)
+                    .clipShape(Capsule())
                 HStack {
                     sliderThumb(proxy: proxy)
                     Spacer()
@@ -32,12 +42,22 @@ struct ChargeSliderView: View {
         Capsule()
             .fill(
                 LinearGradient(
-                    colors: [Color.darkShadow, Color.label],
+                    colors: [Color.darkShadow, Color.clear, Color.label],
                     startPoint: .top,
                     endPoint: .bottom
                 )
             )
             .frame(height: height)
+            .clipShape(Capsule())
+    }
+
+    private func sliderProgress(height: CGFloat, value: Double) -> some View {
+        HStack {
+            Capsule()
+                .fill(color)
+                .frame(width: value, height: height)
+            Spacer()
+        }
     }
 
     private func sliderThumb(proxy: GeometryProxy) -> some View {
@@ -47,9 +67,7 @@ struct ChargeSliderView: View {
             let scaleFactor = maxValue / (sliderRange.upperBound - sliderRange.lowerBound)
             let lowerBound = sliderRange.lowerBound
             let sliderValue = (self.value - lowerBound) * scaleFactor
-            TreangleShape()
-                .fill(LinearGradient.selectedGradient)
-                .frame(width: thumbSize * 1.3, height: thumbSize)
+            thumbView(thumbSize: thumbSize)
                 .offset(x: sliderValue)
                 .gesture(
                     DragGesture(minimumDistance: 0)
@@ -74,35 +92,31 @@ struct ChargeSliderView: View {
                 )
         }
     }
-}
 
-/// Фигура Треугольник
-struct TreangleShape: Shape {
-    func path(in rect: CGRect) -> Path {
-        Path { path in
-            path.move(to: CGPoint(x: rect.midX * 0.5, y: rect.midY))
-            path.addCurve(
-                to: CGPoint(x: rect.midX * 1.5, y: rect.midY),
-                control1: CGPoint(x: rect.midX, y: rect.minY),
-                control2: CGPoint(x: rect.midX, y: rect.minY)
-            )
-            path.addCurve(
-                to: CGPoint(x: rect.midX, y: rect.maxY),
-                control1: CGPoint(x: rect.maxX, y: rect.maxY),
-                control2: CGPoint(x: rect.maxX, y: rect.maxY)
-            )
-            path.addCurve(
-                to: CGPoint(x: rect.midX * 0.5, y: rect.midY),
-                control1: CGPoint(x: rect.minX, y: rect.maxY),
-                control2: CGPoint(x: rect.minX, y: rect.maxY)
-            )
+    private func thumbView(thumbSize: CGFloat) -> some View {
+        ZStack {
+            Capsule()
+                .fill(
+                    LinearGradient.backGroundGradient
+                )
+                .overlay {
+                    Capsule()
+                        .stroke(
+                            LinearGradient.innerReverseShadow,
+                            lineWidth: 3
+                        )
+                        .clipShape(Capsule())
+                }
+                .overlay {
+                    HStack(spacing: 5) {
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(LinearGradient.innerShadow)
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(LinearGradient.innerShadow)
+                    }
+                    .scaleEffect(x: 0.5, y: 0.8)
+                }
         }
-    }
-}
-
-struct ChargeSliderView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomMainTabView()
-            .environment(\.colorScheme, .dark)
+        .frame(width: thumbSize * 2, height: thumbSize * 1.2)
     }
 }

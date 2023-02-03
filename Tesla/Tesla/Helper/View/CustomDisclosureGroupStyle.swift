@@ -5,7 +5,12 @@ import SwiftUI
 
 /// Стиль выпадающего списка
 struct CustomDisclosureGroupStyle<Label: View>: DisclosureGroupStyle {
+    // MARK: - Public Properties
+
     let button: Label
+
+    // MARK: - Public Methods
+
     func makeBody(configuration: Configuration) -> some View {
         GeometryReader { proxy in
             let height = proxy.size.height
