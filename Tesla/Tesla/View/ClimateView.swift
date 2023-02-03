@@ -8,14 +8,14 @@ struct ClimateView: View {
     // MARK: - Public Properties
 
     var body: some View {
-        BackgroundView {
+        BackgroundView(backgroundColor: .backGroundGradient) {
             VStack {
                 HStack {
                     backButton
                     Spacer()
-                    Text("CLIMATE")
+                    Text(Constants.Text.climate)
                         .font(.title2)
-                        .foregroundColor(Color("label"))
+                        .foregroundColor(Color.label)
                     Spacer()
                     settingsButton
                 }
@@ -43,15 +43,13 @@ struct ClimateView: View {
 
     @Environment(\.presentationMode) private var presentation
 
-    @StateObject private var climateViewModel = ClimateViewModel()
-
-    @State private var circleProgress: CGFloat = 0
-    @State private var progress: CGFloat = 0
+    @State private var circleProgress = 0.0
+    @State private var progress = 0.0
     @State private var isDesclosureGroupExpanded = true
     @State private var isAlertShown = false
     @State private var isOnClimate = false
-    @State private var selectedFirstColor = Color("startGradient")
-    @State private var selectedSecondColor = Color("endGradient")
+    @State private var selectedFirstColor = Color.selectedStart
+    @State private var selectedSecondColor = Color.selectedEnd
 
     private var range = 0 ... 15
     private var minimumTemperature = 15.0
@@ -60,8 +58,8 @@ struct ClimateView: View {
         Button(action: {
             presentation.wrappedValue.dismiss()
         }, label: {
-            Image(systemName: "chevron.left")
-                .foregroundColor(Color("label"))
+            Image(systemName: Constants.Image.chevronLeft)
+                .foregroundColor(Color.label)
                 .frame(width: 25, height: 25)
         })
         .buttonStyle(NavigationButtonStyle())
@@ -71,8 +69,8 @@ struct ClimateView: View {
         Button(action: {
             isAlertShown.toggle()
         }, label: {
-            Image(systemName: "gearshape.fill")
-                .foregroundColor(Color("label"))
+            Image(systemName: Constants.Image.gear)
+                .foregroundColor(Color.label)
                 .frame(width: 25, height: 25)
         })
         .buttonStyle(NavigationButtonStyle())
@@ -81,24 +79,24 @@ struct ClimateView: View {
     private var alertView: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .fill(backGroundGradient.opacity(0.5))
+                .fill(LinearGradient.backGroundGradient.opacity(0.5))
                 .overlay {
                     RoundedRectangle(cornerRadius: 25)
-                        .fill(backGroundGradient.opacity(0.5))
+                        .fill(LinearGradient.backGroundGradient.opacity(0.5))
                         .frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.width / 2)
                         .neumorphismUnselectedStyle()
                         .overlay {
                             VStack {
-                                Text("Tesla Support")
+                                Text(Constants.Text.support)
                                     .multilineTextAlignment(.center)
                                     .font(.title2)
                                     .foregroundColor(.white)
-                                if let url = URL(string: "https://www.tesla.com/support") {
-                                    Link("Tesla Support", destination: url)
+                                if let url = URL(string: Constants.Text.urlText) {
+                                    Link(Constants.Text.support, destination: url)
                                         .foregroundColor(.blue)
                                         .padding(10)
                                 }
-                                Button("Ok") {
+                                Button(Constants.Text.okText) {
                                     withAnimation {
                                         isAlertShown.toggle()
                                     }
@@ -114,7 +112,7 @@ struct ClimateView: View {
     }
 
     private var climateDisclosureGroupView: some View {
-        DisclosureGroup("Climate control", isExpanded: $isDesclosureGroupExpanded) {
+        DisclosureGroup(Constants.Text.climateControl, isExpanded: $isDesclosureGroupExpanded) {
             VStack {
                 acButtonView
                 fanButtonView
@@ -123,26 +121,27 @@ struct ClimateView: View {
             }
             .buttonStyle(NavigationButtonStyle())
         }
-        .tint(Color("label"))
-        .foregroundColor(Color("label"))
+        .tint(Color.label)
+        .foregroundColor(Color.label)
         .padding()
     }
 
     private var acButtonView: some View {
         HStack(spacing: 15) {
-            Text("A/С")
+            Text(Constants.Text.autoClimate)
                 .frame(width: 40)
                 .padding(.horizontal, 5)
-                .foregroundColor(Color("label"))
+                .foregroundColor(Color.label)
             Button {} label: {
-                Image(systemName: "snowflake")
+                Image(systemName: Constants.Image.snowFlake)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20, height: 20)
                     .foregroundColor(.gray)
             }
             .frame(width: 30, height: 30)
-            Slider(value: $circleProgress, in: 0 ... 15, step: 0.3)
+            ClimateSliderView(color: $selectedFirstColor, value: $circleProgress, sliderRange: 0 ... 15)
+                .frame(height: 7)
                 .tint(selectedFirstColor)
                 .padding(.vertical, 30)
                 .padding(.horizontal)
@@ -156,12 +155,12 @@ struct ClimateView: View {
 
     private var fanButtonView: some View {
         HStack(spacing: 15) {
-            Text("Fan")
+            Text(Constants.Text.fan)
                 .frame(width: 40)
                 .padding(.horizontal, 5)
-                .foregroundColor(Color("label"))
+                .foregroundColor(Color.label)
             Button {} label: {
-                Image(systemName: "wind")
+                Image(systemName: Constants.Image.wind)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20, height: 20)
@@ -169,7 +168,8 @@ struct ClimateView: View {
             }
             .frame(width: 30, height: 30)
             withAnimation {
-                Slider(value: $progress, in: 0 ... 15, step: 0.3)
+                ClimateSliderView(color: $selectedFirstColor, value: $progress, sliderRange: 0 ... 15)
+                    .frame(height: 7)
             }
             .padding(.vertical, 30)
             .padding(.horizontal)
@@ -178,12 +178,12 @@ struct ClimateView: View {
 
     private var heatButtonView: some View {
         HStack(spacing: 15) {
-            Text("Heat")
+            Text(Constants.Text.heat)
                 .frame(width: 40)
                 .padding(.horizontal, 5)
-                .foregroundColor(Color("label"))
+                .foregroundColor(Color.label)
             Button {} label: {
-                Image(systemName: "humidity.fill")
+                Image(systemName: Constants.Image.heat)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20, height: 20)
@@ -191,7 +191,8 @@ struct ClimateView: View {
             }
             .frame(width: 30, height: 30)
             withAnimation {
-                Slider(value: $progress, in: 0 ... 15, step: 0.3)
+                ClimateSliderView(color: $selectedFirstColor, value: $progress, sliderRange: 0 ... 15)
+                    .frame(height: 7)
             }
             .padding(.vertical, 30)
             .padding(.horizontal)
@@ -200,12 +201,12 @@ struct ClimateView: View {
 
     private var autoButtonView: some View {
         HStack(spacing: 15) {
-            Text("Auto")
+            Text(Constants.Text.auto)
                 .frame(width: 40)
                 .padding(.horizontal, 5)
-                .foregroundColor(Color("label"))
+                .foregroundColor(Color.label)
             Button {} label: {
-                Image(systemName: "timer")
+                Image(systemName: Constants.Image.timer)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20, height: 20)
@@ -213,7 +214,8 @@ struct ClimateView: View {
             }
             .frame(width: 30, height: 30)
             withAnimation {
-                Slider(value: $progress, in: 0 ... 15, step: 0.3)
+                ClimateSliderView(color: $selectedFirstColor, value: $progress, sliderRange: 0 ... 15)
+                    .frame(height: 7)
             }
             .padding(.vertical, 30)
             .padding(.horizontal)
@@ -225,26 +227,31 @@ struct ClimateView: View {
             CircularProgressView(selectedColors: [selectedFirstColor, selectedSecondColor], progress: circleProgress)
                 .frame(width: 140)
                 .animation(.easeInOut, value: circleProgress)
-            Text(isOnClimate ? "\(Int(minimumTemperature + circleProgress))° C" : "")
-                .font(.largeTitle.bold())
+            Text(
+                isOnClimate ? "\(Int(minimumTemperature + circleProgress))\(Constants.Text.celsius)" : Constants.Text
+                    .emptyString
+            )
+            .font(.largeTitle.bold())
         }
         .neumorphismUnselectedStyle()
     }
 
     private var headerBotomView: some View {
         RoundedRectangle(cornerRadius: 25)
-            .stroke(Color("label").opacity(0.1), lineWidth: 2)
+            .stroke(Color.label.opacity(0.1), lineWidth: 2)
             .frame(height: 85)
             .overlay(
                 HStack {
                     VStack(spacing: 0) {
-                        Text("A/C is On")
-                            .font(.system(size: 18).bold())
-                            .frame(width: 160, alignment: .leading)
+                        Text(
+                            "\(Constants.Text.acBottom)\(isOnClimate ? Constants.Text.onText : Constants.Text.offText)"
+                        )
+                        .font(.system(size: 18).bold())
+                        .frame(width: 160, alignment: .leading)
 
-                        Text("Tap to turn off or swipe up for a fast setup")
+                        Text(Constants.Text.bottomMesage)
                             .font(.system(size: 13))
-                            .foregroundColor(Color("label"))
+                            .foregroundColor(Color.label)
                             .frame(width: 160, height: 45, alignment: .leading)
                     }
                     Spacer()
@@ -252,13 +259,13 @@ struct ClimateView: View {
                     Toggle(isOn: $isOnClimate) {
                         ZStack {
                             if isOnClimate {
-                                Image(systemName: "power")
+                                Image(systemName: Constants.Image.power)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 20, height: 20)
                                     .blur(radius: 5)
                             }
-                            Image(systemName: "power")
+                            Image(systemName: Constants.Image.power)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 15, height: 15)
@@ -283,15 +290,15 @@ struct ClimateView: View {
             Button {}
             label: {
                     VStack {
-                        selectedGradient
+                        LinearGradient.selectedGradient
                             .mask {
-                                Image(systemName: "power")
+                                Image(systemName: Constants.Image.power)
                             }
                             .frame(width: 25, height: 25)
                             .padding(.bottom, 30)
-                        Text("On")
+                        Text(Constants.Text.onText)
                             .font(.system(size: 13))
-                            .foregroundColor(Color("label"))
+                            .foregroundColor(Color.label)
                     }
                 }
             CustomStepper(
@@ -311,15 +318,15 @@ struct ClimateView: View {
             Button {}
             label: {
                     VStack {
-                        unselectedGradient
+                        LinearGradient.unselectedGradient
                             .mask {
-                                Image("Vent")
+                                Image(Constants.Image.vent)
                             }
                             .frame(width: 25, height: 25)
                             .padding(.bottom, 30)
-                        Text("Vent")
+                        Text(Constants.Image.vent)
                             .font(.system(size: 13))
-                            .foregroundColor(Color("label"))
+                            .foregroundColor(Color.label)
                     }
                 }
         }
@@ -329,22 +336,22 @@ struct ClimateView: View {
     private var colorPickerView: some View {
         HStack(alignment: .firstTextBaseline, spacing: 30) {
             VStack {
-                ColorPicker("", selection: $selectedFirstColor)
+                ColorPicker(Constants.Text.emptyString, selection: $selectedFirstColor)
                     .frame(width: 50)
                     .neumorphismUnselectedStyle(4)
                     .padding(.trailing, 15)
-                Text("Start color")
+                Text(Constants.Text.startColor)
                     .font(.subheadline)
-                    .foregroundColor(Color("label"))
+                    .foregroundColor(Color.label)
             }
             VStack {
-                ColorPicker("", selection: $selectedSecondColor)
+                ColorPicker(Constants.Text.emptyString, selection: $selectedSecondColor)
                     .frame(width: 50)
                     .neumorphismUnselectedStyle(4)
                     .padding(.trailing, 15)
-                Text("End color")
+                Text(Constants.Text.endColor)
                     .font(.subheadline)
-                    .foregroundColor(Color("label"))
+                    .foregroundColor(Color.label)
             }
         }
         .padding(.horizontal, 80)

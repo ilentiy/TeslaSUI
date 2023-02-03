@@ -1,0 +1,70 @@
+// Constants.swift
+// Copyright © RoadMap. All rights reserved.
+
+import Foundation
+
+/// Константы
+enum Constants {
+    enum Text {
+        static let climate = "CLIMATE"
+        static let soon = "В разработке"
+        static let geometryId = "lightView"
+        static let support = "Tesla Support"
+        static let urlText = "https://www.tesla.com/support"
+        static let okText = "Ok"
+        static let climateControl = "Climate control"
+        static let autoClimate = "A/С"
+        static let fan = "Fan"
+        static let heat = "Heat"
+        static let auto = "Auto"
+        static let celsius = "° C"
+        static let emptyString = ""
+        static let acBottom = "A/C is "
+        static let onText = "On"
+        static let offText = "Off"
+        static let bottomMesage = "Tap to turn off or swipe up for a fast setup"
+        static let startColor = "Start color"
+        static let endColor = "End color"
+        static let charging = "CHARGING"
+        static let pecentSign = "%"
+        static let sevenPercent = "75%"
+        static let tenPercent = "100%"
+        static let limit = "Set Charge Limit"
+        static let superCharger = "Tesla Supercharger -"
+        static let location = "Montreal, QC"
+        static let countCharge = "2 /"
+        static let availableCharge = " 4 available"
+        static let kmText = "1.7 km"
+        static let allKm = "187 km"
+        static let neardy = "Neardy Superchargers"
+        static let tesla = "Tesla"
+        static let nameWelcome = "Hi, Ilentiy"
+        static let welcome = "Welcome back"
+        static let unlock = "Unlock"
+        static let lock = "Lock"
+    }
+
+    enum Image {
+        static let gear = "gearshape.fill"
+        static let car = "car.fill"
+        static let bolt = "bolt.fill"
+        static let map = "mappin.and.ellipse"
+        static let person = "person.fill"
+        static let chevronLeft = "chevron.left"
+        static let snowFlake = "snowflake"
+        static let wind = "wind"
+        static let heat = "humidity.fill"
+        static let timer = "timer"
+        static let power = "power"
+        static let vent = "Vent"
+        static let chevronUp = "chevron.up"
+        static let gearshape = "gearshape.fill"
+        static let tesla = "teslaOnSide"
+        static let boltCircle = "bolt.circle.fill"
+        static let teslaMain = "teslaMain"
+        static let unlock = "lock.open.fill"
+        static let lock = "lock.fill"
+        static let teslaUnlock = "teslaUnlocked"
+        static let teslaLock = "teslaLocked"
+    }
+}

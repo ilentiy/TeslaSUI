@@ -7,13 +7,14 @@ import SwiftUI
 struct BackgroundView<Content: View>: View {
     // MARK: - Public Properties
 
+    var backgroundColor: LinearGradient
     var content: () -> Content
 
     var body: some View {
         ZStack {
             Rectangle()
                 .fill(
-                    backGroundGradient
+                    backgroundColor
                 )
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
