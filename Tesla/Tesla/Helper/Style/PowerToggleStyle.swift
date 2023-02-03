@@ -26,14 +26,14 @@ struct ToggleBlueBackgroundView<S: Shape>: View {
         ZStack {
             if isHighlighted {
                 shape
-                    .fill(innerBlueShadow)
+                    .fill(LinearGradient.innerBlueShadow)
                     .neumorphismUnselectedStyle()
             } else {
                 shape
-                    .fill(innerInvertBlueShadow)
+                    .fill(LinearGradient.innerInvertBlueShadow)
                     .overlay(
                         shape
-                            .stroke(innerShadow, lineWidth: 2)
+                            .stroke(LinearGradient.innerShadow, lineWidth: 2)
                     )
                     .neumorphismUnselectedStyle()
             }

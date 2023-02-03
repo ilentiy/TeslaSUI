@@ -8,7 +8,7 @@ struct TeslaApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                UnlockView()
+                LaunchAppView()
             }
             .environment(\.colorScheme, .dark)
         }

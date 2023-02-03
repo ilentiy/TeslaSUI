@@ -7,7 +7,7 @@ import SwiftUI
 struct CircularProgressView: View {
     // MARK: - Public Properties
 
-    var selectedColors = [Color("startGradient"), Color("endGradient")]
+    var selectedColors = [Color.selectedStart, Color.selectedEnd]
 
     var progress = 0.0
 
@@ -15,7 +15,7 @@ struct CircularProgressView: View {
         ZStack {
             Circle()
                 .fill(
-                    innerShadow
+                    LinearGradient.innerShadow
                 )
                 .padding()
                 .neumorphismUnselectedStyle(5)
@@ -24,7 +24,7 @@ struct CircularProgressView: View {
                         .stroke(
                             lineWidth: 25
                         )
-                        .fill(innerShadow)
+                        .fill(LinearGradient.innerShadow)
                 }
             Circle()
                 .trim(from: 0, to: progress / 15)

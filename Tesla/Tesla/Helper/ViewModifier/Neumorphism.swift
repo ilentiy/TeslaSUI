@@ -5,18 +5,18 @@ import SwiftUI
 
 /// Стиль нейроморфизм невыбранный
 struct NeumorphismUnselected: ViewModifier {
-    var value: CGFloat = 10
+    var value: CGFloat = 8
 
     func body(content: Content) -> some View {
         content
             .shadow(
-                color: Color("ligthShadow").opacity(0.2),
+                color: Color.lightShadow,
                 radius: value,
                 x: -value,
                 y: -value
             )
             .shadow(
-                color: Color("darkShadow").opacity(0.7),
+                color: Color.darkShadow,
                 radius: value,
                 x: value,
                 y: value
@@ -29,13 +29,13 @@ struct NeumorphismSelected: ViewModifier {
     func body(content: Content) -> some View {
         content
             .shadow(
-                color: Color("ligthShadow").opacity(0.2),
+                color: Color.lightShadow.opacity(0.2),
                 radius: 10,
                 x: 10,
                 y: 10
             )
             .shadow(
-                color: Color("darkShadow").opacity(0.7),
+                color: Color.darkShadow.opacity(0.7),
                 radius: 10,
                 x: -5,
                 y: -5

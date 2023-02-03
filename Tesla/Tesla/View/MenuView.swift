@@ -8,11 +8,10 @@ struct MenuView: View {
     // MARK: - Public Properties
 
     var body: some View {
-        BackgroundView {
+        BackgroundView(backgroundColor: .backGroundGradient) {
             VStack(spacing: 30) {
                 headerView
                 carImageView
-                Spacer()
                 controllPanelView
                 navigationLinkView
                 Spacer()
@@ -34,18 +33,18 @@ struct MenuView: View {
     private var headerView: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Tesla")
+                Text(Constants.Text.tesla)
                     .font(
                         .system(size: 28, weight: .bold)
                     )
-                    .foregroundColor(Color("label"))
-                Text("187 km")
+
+                Text(Constants.Text.allKm)
                     .font(
                         .system(size: 17, weight: .semibold)
                     )
-                    .foregroundColor(Color("label"))
                     .opacity(0.4)
             }
+            .foregroundColor(Color.label)
             Spacer()
             settingsButton
         }
@@ -54,22 +53,22 @@ struct MenuView: View {
 
     private var settingsButton: some View {
         Button(action: {}, label: {
-            Image(systemName: "person.fill")
+            Image(systemName: Constants.Image.person)
                 .scaledToFill()
-                .foregroundColor(Color("label"))
+                .foregroundColor(Color.label)
                 .frame(width: 25, height: 25)
         })
         .buttonStyle(NavigationButtonStyle())
     }
 
     private var carImageView: some View {
-        Image("teslaMain")
+        Image(Constants.Image.teslaMain)
             .resizable()
             .scaledToFill()
             .frame(height: 150)
             .padding(.horizontal)
             .padding(.bottom, 40)
-            .shadow(color: Color("ligthShadow").opacity(0.25), radius: 20, x: 10, y: 10)
+            .shadow(color: Color.lightShadow, radius: 20, x: 10, y: 10)
     }
 
     private var controllPanelView: some View {
@@ -81,7 +80,7 @@ struct MenuView: View {
         .padding(.horizontal, 30)
         .background(
             RoundedRectangle(cornerRadius: 50)
-                .fill(Color("background"))
+                .fill(Color.backgroundStart)
                 .neumorphismUnselectedStyle()
                 .frame(height: 100)
         )
@@ -92,7 +91,7 @@ struct MenuView: View {
             ClimateView()
                 .navigationBarBackButtonHidden()
         } label: {
-            Text("")
+            Text(Constants.Text.emptyString)
         }
     }
 
@@ -116,13 +115,13 @@ struct MenuView: View {
                     .overlay {
                         ZStack {
                             Circle()
-                                .stroke(selectedGradient, lineWidth: 3)
+                                .stroke(LinearGradient.selectedGradient, lineWidth: 3)
                                 .opacity(tagSelected == index ? 1 : 0)
                                 .blur(radius: 6)
                             Circle()
-                                .stroke(selectedGradient, lineWidth: 2)
+                                .stroke(LinearGradient.selectedGradient, lineWidth: 2)
                                 .opacity(tagSelected == index ? 1 : 0)
-                            (tagSelected == index ? selectedGradient : unselectedGradient)
+                            (tagSelected == index ? LinearGradient.selectedGradient : LinearGradient.unselectedGradient)
                                 .mask {
                                     Image(menuIconImageNames[index])
                                 }
@@ -133,7 +132,7 @@ struct MenuView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         MenuView()
             .environment(\.colorScheme, .dark)

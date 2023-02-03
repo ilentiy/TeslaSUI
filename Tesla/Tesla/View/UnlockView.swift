@@ -6,51 +6,54 @@ import SwiftUI
 /// Экран блокировки
 struct UnlockView: View {
     // MARK: - Public Properties
-
+    
     var body: some View {
-        backGroundView {
-            VStack {
-                HStack {
-                    Spacer()
-                    settingsButton
-                        .padding(.horizontal, 30)
+        BackgroundView(backgroundColor: unlockViewModel.isUnclocked ? LinearGradient.backGroundGradient : LinearGradient
+            .lockBackgroundGradient) {
+                VStack {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            settingsButton
+                                .padding(.horizontal, 30)
+                        }
+                        Spacer()
+                        welcomeTextView
+                        Spacer()
+                        carImageView
+                            .padding(.bottom, 125)
+                    }
+                    lockCarControlView
+                    
                 }
-                Spacer()
-                welcomeTextView
-                Spacer()
-                carImageView
-                    .padding(.bottom, 125)
-                lockCarControlView
-                Spacer()
             }
-        }
-        .onDisappear {
-            unlockViewModel.isUnclocked = false
-        }
+            .onDisappear {
+                unlockViewModel.isUnclocked = false
+            }
     }
-
+    
     // MARK: - Private Properties
-
+    
     @StateObject private var unlockViewModel = UnlockViewModel()
-
+    
     private var welcomeTextView: some View {
         VStack {
-            Text("Hi, Ilentiy")
-            Text("Welcome back".uppercased())
+            Text(Constants.Text.nameWelcome)
+            Text(Constants.Text.welcome.uppercased())
                 .font(.largeTitle)
                 .bold()
         }
         .opacity(unlockViewModel.isUnclocked ? 1 : 0)
     }
-
+    
     private var settingsButton: some View {
         NavigationLink {
-            MenuView()
+            CustomMainTabView()
                 .navigationBarBackButtonHidden(true)
         } label: {
             Button(action: {}, label: {
-                Image(systemName: "gearshape.fill")
-                    .foregroundColor(Color("label"))
+                Image(systemName: Constants.Image.gear)
+                    .foregroundColor(Color.label)
                     .frame(width: 25, height: 25)
             })
             .opacity(unlockViewModel.isUnclocked ? 1 : 0.6)
@@ -58,87 +61,50 @@ struct UnlockView: View {
             .disabled(unlockViewModel.isUnclocked)
         }
     }
-
+    
     private var carImageView: some View {
-        Image(unlockViewModel.isUnclocked ? "teslaUnlocked" : "teslaLocked")
+        Image(unlockViewModel.isUnclocked ? Constants.Image.teslaUnlock : Constants.Image.teslaLock)
             .resizable()
             .scaledToFill()
             .frame(height: 255)
             .offset(x: unlockViewModel.isUnclocked ? 0 : 10)
     }
-
+    
     private var lockCarControlView: some View {
-        Button {
-            withAnimation(.linear(duration: 0.6)) {
-                unlockViewModel.isUnclocked.toggle()
+        HStack {
+            Text(unlockViewModel.isUnclocked ? Constants.Text.unlock : Constants.Text.lock)
+                .font(.system(size: 13))
+                .foregroundColor(Color.white)
+                .frame(width: 60)
+            
+            Button {
+                withAnimation(.easeOut(duration: 1)) {
+                    unlockViewModel.isUnclocked.toggle()
+                }
+            } label: {
+                ZStack {
+                    Circle()
+                        .fill(LinearGradient.selectedGradient)
+                        .blur(radius: 12)
+                    
+                    LinearGradient.selectedGradient
+                        .mask {
+                            Image(
+                                systemName: unlockViewModel.isUnclocked ? Constants.Image.unlock : Constants.Image.lock
+                            )
+                        }
+                        .frame(width: 25, height: 25)
+                }
             }
-        } label: {
-            HStack {
-                Text(unlockViewModel.isUnclocked ? "Unlock" : "Lock")
-                    .foregroundColor(Color("label"))
-                    .frame(width: 60)
-                Spacer()
-                selectedGradient
-                    .mask {
-                        Image(systemName: unlockViewModel.isUnclocked ? "lock.open.fill" : "lock.fill")
-                    }
-                    .frame(width: 20, height: 20)
-                    .neumorphismUnselectedCircleStyle()
-            }
-            .padding(.horizontal)
-            .background(
-                RoundedRectangle(cornerRadius: 50)
-                    .fill(Color("background"))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 50)
-                            .stroke(Color("darkShadow"), lineWidth: 4)
-                            .blur(radius: 4)
-                            .offset(x: 2, y: 2)
-                            .mask {
-                                RoundedRectangle(cornerRadius: 50)
-                                    .fill(
-                                        LinearGradient(
-                                            colors: [.black.opacity(0.7), .clear],
-                                            startPoint: .topLeading,
-                                            endPoint: .bottom
-                                        )
-                                    )
-                            }
-                    )
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 50)
-                            .stroke(Color("label"), lineWidth: 8)
-                            .blur(radius: 4)
-                            .offset(x: -2, y: -2)
-                            .mask {
-                                RoundedRectangle(cornerRadius: 50)
-                                    .fill(
-                                        LinearGradient(
-                                            colors: [.clear, .black.opacity(0.2)],
-                                            startPoint: .top,
-                                            endPoint: .bottomTrailing
-                                        )
-                                    )
-                            }
-                    )
-                    .frame(height: 80)
-            )
-            .padding(.horizontal, 112)
+            .buttonStyle(NavigationButtonStyle())
         }
-    }
-
-    // MARK: - Private Methods
-
-    private func backGroundView<Content: View>(content: () -> Content) -> some View {
-        ZStack {
-            Rectangle()
-                .fill(
-                    unlockViewModel.isUnclocked ? backGroundGradient : lockBackgroundGradient
-                )
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all)
-            content()
-        }
+        .frame(width: 120, height: 60)
+        .animation(.linear(duration: 0), value: unlockViewModel.isUnclocked)
+        .padding(10)
+        .background(
+            NeumorphismPressedView(shape: RoundedRectangle(cornerRadius: 50), backgroundColor: .innerShadow)
+        )
+        .padding(.horizontal, 112)
     }
 }
 

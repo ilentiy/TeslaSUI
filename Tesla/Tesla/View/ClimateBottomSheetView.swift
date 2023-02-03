@@ -17,7 +17,7 @@ struct ClimateBottomSheetView<Content: View, S: Shape>: View {
                 .background(.ultraThinMaterial, in: shape)
                 .overlay(
                     shape
-                        .stroke(Color("label").opacity(0.2), lineWidth: 2)
+                        .stroke(Color.lightShadow, lineWidth: 2)
                 )
                 .ignoresSafeArea(.all, edges: .bottom)
                 .offset(y: height + 130)

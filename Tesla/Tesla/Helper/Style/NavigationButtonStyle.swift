@@ -26,14 +26,14 @@ struct ButtonDarkBackgroundView<S: Shape>: View {
         ZStack {
             if isHighlighted {
                 shape
-                    .fill(innerShadow)
+                    .fill(LinearGradient.innerShadow)
                     .neumorphismUnselectedStyle()
             } else {
                 shape
-                    .fill(innerReverseShadow)
+                    .fill(LinearGradient.innerReverseShadow)
                     .overlay(
                         shape
-                            .stroke(innerShadow, lineWidth: 2)
+                            .stroke(LinearGradient.innerShadow, lineWidth: 2)
                     )
                     .neumorphismUnselectedStyle()
             }
