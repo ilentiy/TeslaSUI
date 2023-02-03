@@ -9,7 +9,7 @@ struct CustomDisclosureGroupStyle<Label: View>: DisclosureGroupStyle {
     func makeBody(configuration: Configuration) -> some View {
         GeometryReader { proxy in
             let height = proxy.size.height
-            
+
             ZStack(alignment: .top) {
                 NeumorphismPressedView(
                     shape: RoundedRectangle(cornerRadius: 25),
@@ -31,21 +31,18 @@ struct CustomDisclosureGroupStyle<Label: View>: DisclosureGroupStyle {
                         .buttonStyle(NavigationButtonStyle())
                     }
                     .padding(.horizontal)
-                    .frame(height: height )
-                    
+                    .frame(height: height)
+
                     if configuration.isExpanded {
                         configuration.content
-                        //   .padding(.vertical)
+                            //   .padding(.vertical)
                             .disclosureGroupStyle(self)
                             .scaleEffect(y: configuration.isExpanded ? 1 : 0)
-                            .opacity( configuration.isExpanded ? 1 : 0)
+                            .opacity(configuration.isExpanded ? 1 : 0)
                     }
-                    
                 }
-                .frame(height: configuration.isExpanded ?  height * 3 : height )
-
+                .frame(height: configuration.isExpanded ? height * 3 : height)
             }
-            
         }
     }
 }

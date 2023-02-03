@@ -1,19 +1,15 @@
-//
-//  NeumorphismPressed.swift
-//  Tesla
-//
-//  Created by Илья on 03.02.2023.
-//
+// NeumorphismPressed.swift
+// Copyright © RoadMap. All rights reserved.
 
 import SwiftUI
 
 /// Эффект нажатого элемента
 struct NeumorphismPressedView<S: Shape>: View {
     // MARK: - Public Properties
-    
+
     var shape: S
     var backgroundColor: LinearGradient?
-    
+
     var body: some View {
         ZStack {
             ZStack {
@@ -46,7 +42,7 @@ struct NeumorphismPressedView<S: Shape>: View {
                     .stroke(Color.lightShadow, lineWidth: 8)
                     .blur(radius: 8)
                     .offset(x: -10, y: -10)
-                
+
                     .mask(
                         shape
                             .fill(

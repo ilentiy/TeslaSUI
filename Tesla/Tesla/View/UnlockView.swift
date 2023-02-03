@@ -6,36 +6,37 @@ import SwiftUI
 /// Экран блокировки
 struct UnlockView: View {
     // MARK: - Public Properties
-    
+
     var body: some View {
-        BackgroundView(backgroundColor: unlockViewModel.isUnclocked ? LinearGradient.backGroundGradient : LinearGradient
-            .lockBackgroundGradient) {
+        BackgroundView(
+            backgroundColor: unlockViewModel.isUnclocked ? LinearGradient.backGroundGradient : LinearGradient
+                .lockBackgroundGradient
+        ) {
+            VStack {
                 VStack {
-                    VStack {
-                        HStack {
-                            Spacer()
-                            settingsButton
-                                .padding(.horizontal, 30)
-                        }
+                    HStack {
                         Spacer()
-                        welcomeTextView
-                        Spacer()
-                        carImageView
-                            .padding(.bottom, 125)
+                        settingsButton
+                            .padding(.horizontal, 30)
                     }
-                    lockCarControlView
-                    
+                    Spacer()
+                    welcomeTextView
+                    Spacer()
+                    carImageView
+                        .padding(.bottom, 125)
                 }
+                lockCarControlView
             }
-            .onDisappear {
-                unlockViewModel.isUnclocked = false
-            }
+        }
+        .onDisappear {
+            unlockViewModel.isUnclocked = false
+        }
     }
-    
+
     // MARK: - Private Properties
-    
+
     @StateObject private var unlockViewModel = UnlockViewModel()
-    
+
     private var welcomeTextView: some View {
         VStack {
             Text(Constants.Text.nameWelcome)
@@ -45,7 +46,7 @@ struct UnlockView: View {
         }
         .opacity(unlockViewModel.isUnclocked ? 1 : 0)
     }
-    
+
     private var settingsButton: some View {
         NavigationLink {
             CustomMainTabView()
@@ -61,7 +62,7 @@ struct UnlockView: View {
             .disabled(unlockViewModel.isUnclocked)
         }
     }
-    
+
     private var carImageView: some View {
         Image(unlockViewModel.isUnclocked ? Constants.Image.teslaUnlock : Constants.Image.teslaLock)
             .resizable()
@@ -69,14 +70,14 @@ struct UnlockView: View {
             .frame(height: 255)
             .offset(x: unlockViewModel.isUnclocked ? 0 : 10)
     }
-    
+
     private var lockCarControlView: some View {
         HStack {
             Text(unlockViewModel.isUnclocked ? Constants.Text.unlock : Constants.Text.lock)
                 .font(.system(size: 13))
                 .foregroundColor(Color.white)
                 .frame(width: 60)
-            
+
             Button {
                 withAnimation(.easeOut(duration: 1)) {
                     unlockViewModel.isUnclocked.toggle()
@@ -86,7 +87,7 @@ struct UnlockView: View {
                     Circle()
                         .fill(LinearGradient.selectedGradient)
                         .blur(radius: 12)
-                    
+
                     LinearGradient.selectedGradient
                         .mask {
                             Image(

@@ -18,10 +18,10 @@ struct LaunchAppView: View {
             }
         }
         .onAppear {
-            withAnimation(.easeInOut(duration: 5)) {
+            withAnimation(.linear(duration: 10)) {
                 launchAppViewModel.progress = 1
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                    withAnimation(.easeIn(duration: 1)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 11) {
+                    withAnimation(.easeIn(duration: 2)) {
                         self.launchAppViewModel.isActive = true
                     }
                 }
@@ -37,24 +37,42 @@ struct LaunchAppView: View {
 
     private func launchView(progress: Double) -> some View {
         BackgroundView(backgroundColor: .lockBackgroundGradient) {
-            VStack {
-                HStack {
-                    Spacer()
-                    ZStack {
-                        TeslaIconShape()
-                            .trim(from: 0, to: progress)
-                            .stroke(.cyan, style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))
-                            .blur(radius: 5)
-
-                        TeslaIconShape()
-                            .trim(from: 0, to: progress)
-                            .stroke(.cyan, style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))
-                            .opacity(0.7)
-                    }
-                    Spacer()
+            HStack(alignment: .center) {
+                ZStack(alignment: .center) {
+                    TeslaIconShape()
+                        .trim(from: 0, to: progress)
+                        .stroke(
+                            Color.selectedStart,
+                            style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)
+                        )
+                        .blur(radius: 10)
+                    NeumorphismPressedView(shape: TeslaIconShape(), backgroundColor: .backGroundGradient)
+                    TeslaIconShape()
+                        .trim(from: 0, to: progress)
+                        .stroke(
+                            Color.selectedStart,
+                            style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)
+                        )
+                        .blur(radius: 5)
+                        .opacity(0.7)
+                    TeslaIconShape()
+                        .trim(from: 0, to: progress)
+                        .stroke(
+                            Color.selectedEnd,
+                            style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)
+                        )
+                        .opacity(0.7)
                 }
-                .padding(.horizontal)
+                .padding(.top, UIScreen.main.bounds.height * 0.3)
+                .padding(.horizontal, 25)
             }
         }
+    }
+}
+
+struct LaunchAppView_Previews: PreviewProvider {
+    static var previews: some View {
+        LaunchAppView()
+            .environment(\.colorScheme, .dark)
     }
 }
